@@ -122,7 +122,7 @@ def train_contrastive_model(args):
     test_dataloader = DataLoader(test_ds, batch_size=args.batch_size, num_workers=64)
 
     backbone = BottleNeckModel(
-        args.embed_dim, args.num_heads, args.d_ff, args.num_variables, args.N, args.use_lstm, args.masked
+        args.embed_dim, args.num_heads, args.d_ff, args.num_variables, args.N, args.use_lstm
     ).to(DEVICE)
     head = ProjectionHead(args.embed_dim).to(DEVICE)
 
@@ -259,7 +259,7 @@ def train_masked_pretraining_model(args):
     val_dataloader = DataLoader(val_ds, batch_size=args.batch_size)
 
     bottleneckmodel = BottleNeckModel(
-        args.embed_dim, args.num_heads, args.d_ff, args.num_variables, args.N, args.use_lstm, args.masked
+        args.embed_dim, args.num_heads, args.d_ff, args.num_variables, args.N, args.use_lstm
     ).to(DEVICE)
     forecast_model = ForecastModel(args.embed_dim).to(DEVICE)
     model = Model(bottleneckmodel, forecast_model).to(DEVICE)
@@ -403,7 +403,7 @@ def train_combined_model(args):
     test_dataloader = DataLoader(test_ds, batch_size=args.batch_size)
 
     bottleneckmodel = BottleNeckModel(
-        args.embed_dim, args.num_heads, args.d_ff, args.num_variables, args.N, args.use_lstm, args.masked
+        args.embed_dim, args.num_heads, args.d_ff, args.num_variables, args.N, args.use_lstm
     ).to(DEVICE)
     forecast_model = ForecastModel(args.embed_dim).to(DEVICE)
     head = ProjectionHead(args.embed_dim).to(DEVICE)
