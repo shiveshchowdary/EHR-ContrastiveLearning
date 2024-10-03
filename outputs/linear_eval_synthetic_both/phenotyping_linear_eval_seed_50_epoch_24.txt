@@ -1,0 +1,86 @@
+Loading Combined Model
+Loading from saved_models/Combined_Pre_Trained_Model_399.pth
+Total number of parameters: 81817
+Training...............
+Epoch 1/20, Validation Macro AUC-ROC: 0.706
+Epoch 1/20, Validation Micro AUC-ROC: 0.739
+Epoch 1/20, Training Loss: 0.392
+Epoch 1/20, Validation Loss: 0.401
+Epoch 2/20, Validation Macro AUC-ROC: 0.709
+Epoch 2/20, Validation Micro AUC-ROC: 0.751
+Epoch 2/20, Training Loss: 0.388
+Epoch 2/20, Validation Loss: 0.402
+Epoch 3/20, Validation Macro AUC-ROC: 0.709
+Epoch 3/20, Validation Micro AUC-ROC: 0.751
+Epoch 3/20, Training Loss: 0.387
+Epoch 3/20, Validation Loss: 0.399
+Epoch 4/20, Validation Macro AUC-ROC: 0.712
+Epoch 4/20, Validation Micro AUC-ROC: 0.760
+Epoch 4/20, Training Loss: 0.387
+Epoch 4/20, Validation Loss: 0.394
+Epoch 5/20, Validation Macro AUC-ROC: 0.712
+Epoch 5/20, Validation Micro AUC-ROC: 0.764
+Epoch 5/20, Training Loss: 0.386
+Epoch 5/20, Validation Loss: 0.388
+Epoch 6/20, Validation Macro AUC-ROC: 0.711
+Epoch 6/20, Validation Micro AUC-ROC: 0.766
+Epoch 6/20, Training Loss: 0.385
+Epoch 6/20, Validation Loss: 0.393
+Epoch 7/20, Validation Macro AUC-ROC: 0.712
+Epoch 7/20, Validation Micro AUC-ROC: 0.757
+Epoch 7/20, Training Loss: 0.384
+Epoch 7/20, Validation Loss: 0.388
+Epoch 8/20, Validation Macro AUC-ROC: 0.712
+Epoch 8/20, Validation Micro AUC-ROC: 0.763
+Epoch 8/20, Training Loss: 0.383
+Epoch 8/20, Validation Loss: 0.390
+Epoch 9/20, Validation Macro AUC-ROC: 0.713
+Epoch 9/20, Validation Micro AUC-ROC: 0.765
+Epoch 9/20, Training Loss: 0.382
+Epoch 9/20, Validation Loss: 0.385
+Epoch 10/20, Validation Macro AUC-ROC: 0.714
+Epoch 10/20, Validation Micro AUC-ROC: 0.766
+Epoch 10/20, Training Loss: 0.381
+Epoch 10/20, Validation Loss: 0.383
+Epoch 11/20, Validation Macro AUC-ROC: 0.714
+Epoch 11/20, Validation Micro AUC-ROC: 0.763
+Epoch 11/20, Training Loss: 0.380
+Epoch 11/20, Validation Loss: 0.389
+Epoch 12/20, Validation Macro AUC-ROC: 0.714
+Epoch 12/20, Validation Micro AUC-ROC: 0.773
+Epoch 12/20, Training Loss: 0.378
+Epoch 12/20, Validation Loss: 0.379
+Epoch 13/20, Validation Macro AUC-ROC: 0.715
+Epoch 13/20, Validation Micro AUC-ROC: 0.771
+Epoch 13/20, Training Loss: 0.377
+Epoch 13/20, Validation Loss: 0.382
+Epoch 14/20, Validation Macro AUC-ROC: 0.715
+Epoch 14/20, Validation Micro AUC-ROC: 0.772
+Epoch 14/20, Training Loss: 0.376
+Epoch 14/20, Validation Loss: 0.382
+Epoch 15/20, Validation Macro AUC-ROC: 0.715
+Epoch 15/20, Validation Micro AUC-ROC: 0.774
+Epoch 15/20, Training Loss: 0.375
+Epoch 15/20, Validation Loss: 0.379
+Epoch 16/20, Validation Macro AUC-ROC: 0.716
+Epoch 16/20, Validation Micro AUC-ROC: 0.775
+Epoch 16/20, Training Loss: 0.374
+Epoch 16/20, Validation Loss: 0.378
+Epoch 17/20, Validation Macro AUC-ROC: 0.716
+Epoch 17/20, Validation Micro AUC-ROC: 0.777
+Epoch 17/20, Training Loss: 0.373
+Epoch 17/20, Validation Loss: 0.377
+Epoch 18/20, Validation Macro AUC-ROC: 0.716
+Epoch 18/20, Validation Micro AUC-ROC: 0.777
+Epoch 18/20, Training Loss: 0.372
+Epoch 18/20, Validation Loss: 0.378
+Epoch 19/20, Validation Macro AUC-ROC: 0.716
+Epoch 19/20, Validation Micro AUC-ROC: 0.778
+Epoch 19/20, Training Loss: 0.372
+Epoch 19/20, Validation Loss: 0.376
+Epoch 20/20, Validation Macro AUC-ROC: 0.716
+Epoch 20/20, Validation Micro AUC-ROC: 0.778
+Epoch 20/20, Training Loss: 0.371
+Epoch 20/20, Validation Loss: 0.376
+Testing..........
+{'macro': [0.7168857789776644], 'micro': [0.778037908095214]}
