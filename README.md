@@ -1,21 +1,20 @@
-# code_base_mimic
+# Contrastive Pretraining with Masked Imputation for Long Clinical Timeseries Data
 
-**drive link for saved models and results**
+## Model Description
+This model was developed to handle large time series data from Electronic Health Records (EHR) with a combined pretraining objective that includes both sequence-level and token-level tasks. The model was pretrained using data from the MIMIC-III dataset and externally validated on the eICU dataset.
 
-link : https://drive.google.com/drive/folders/1cpthrg0DPceVPsbGb2949EE6Ru2XA6sX?usp=sharing
+### Key Features:
+- **Triplet-based Embedding:** The model uses a modified triplet embedding, allowing time series data to be treated similarly to tokens in Natural Language Processing (NLP), facilitating efficient handling of long sequences.
+- **Combined Objective:** Pretraining is performed using a combination of:
+  - **Masked Imputation Task:** The model predicts masked measurement values, enhancing its ability to handle missing data.
+  - **Contrastive Learning Task:** A contrastive objective is used for sequence-level pretraining, utilizing a gradient estimator to handle the contrastive term with smaller batch sizes.
 
-# Run Experiments
+## Training Data
+The model was pretrained using the **MIMIC-III dataset**, a large-scale, publicly available critical care database. To assess its robustness, the model was externally validated using the **eICU dataset**, simulating its performance in smaller, more diverse clinics.
 
-## Pretraining
+### Transfer Learning:
+The model showed robustness across different clinics, successfully transferring learned representations from a large clinic (MIMIC-III) to smaller clinics (eICU) with diverse patient populations.
 
-### Masked Pretraining
-
-`python -m torch.distributed.launch --nproc_per_node=8 main_pretrain.py --data_dir /ssd-shared/MIMIC_EICU_DATA/data/root --pretraining_method MaskedValuePrediction --batch_size 512 --temperature 0.03 --base_lr 1e-3 --weight_decay 0.00001 --gamma 0.1`
-
-### Contrastive Pretraining
-
-`python -m torch.distributed.launch --nproc_per_node=8 main_pretrain.py --data_dir /ssd-shared/MIMIC_EICU_DATA/data/root --pretraining_method MaskedValuePrediction --batch_size 512 --temperature 0.03 --base_lr 1e-3 --weight_decay 0.00001 --gamma 0.1`
-
-### Combined Pretraining
-
-`python -m torch.distributed.launch --nproc_per_node=8 main_pretrain.py --data_dir /ssd-shared/MIMIC_EICU_DATA/data/root --pretraining_method MaskedValuePrediction --batch_size 512 --temperature 0.03 --base_lr 1e-3 --weight_decay 0.00001 --gamma 0.1`
+## Limitations
+- The model’s performance may depend on the quality and completeness of the input time series data.
+- External validation on datasets outside of the healthcare domain has not been performed, so its generalizability beyond clinical data remains untested.
