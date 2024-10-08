@@ -10,11 +10,30 @@ This model was developed to handle large time series data from Electronic Health
   - **Contrastive Learning Task:** A contrastive objective is used for sequence-level pretraining, utilizing a gradient estimator to handle the contrastive term with smaller batch sizes.
 
 ## Training Data
-The model was pretrained using the **MIMIC-III dataset**, a large-scale, publicly available critical care database. To assess its robustness, the model was externally validated using the **eICU dataset**, simulating its performance in smaller, more diverse clinics.
+The model was pretrained using the **MIMIC-III dataset**, a large-scale, publicly available critical care database. To assess its robustness, the model was externally validated using the **eICU dataset**.
 
 ### Transfer Learning:
-The model showed robustness across different clinics, successfully transferring learned representations from a large clinic (MIMIC-III) to smaller clinics (eICU) with diverse patient populations.
+The model showed robustness across different clinics, successfully transferring learned representations from (MIMIC-III) to (eICU) with diverse patient populations.
 
 ## Limitations
 - The model’s performance may depend on the quality and completeness of the input time series data.
-- External validation on datasets outside of the healthcare domain has not been performed, so its generalizability beyond clinical data remains untested.
+- External validation on datasets apart from the eICU dataset has not been performed, so its generalizability beyond eICU remains untested.
+- 
+# Run Experiments
+
+**Pretrained Models** : https://huggingface.co/Shivesh2001/EHR-CombinedModel-MIMIC
+
+## Pretraining
+
+### Masked Pretraining
+
+`python -m torch.distributed.launch --nproc_per_node=8 main_pretrain.py --data_dir /ssd-shared/MIMIC_EICU_DATA/data/root --pretraining_method MaskedValuePrediction --batch_size 512 --temperature 0.03 --base_lr 1e-3 --weight_decay 0.00001 --gamma 0.1`
+
+### Contrastive Pretraining
+
+`python -m torch.distributed.launch --nproc_per_node=8 main_pretrain.py --data_dir /ssd-shared/MIMIC_EICU_DATA/data/root --pretraining_method MaskedValuePrediction --batch_size 512 --temperature 0.03 --base_lr 1e-3 --weight_decay 0.00001 --gamma 0.1`
+
+### Combined Pretraining
+
+`python -m torch.distributed.launch --nproc_per_node=8 main_pretrain.py --data_dir /ssd-shared/MIMIC_EICU_DATA/data/root --pretraining_method MaskedValuePrediction --batch_size 512 --temperature 0.03 --base_lr 1e-3 --weight_decay 0.00001 --gamma 0.1`
+
