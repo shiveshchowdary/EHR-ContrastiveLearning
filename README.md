@@ -1,5 +1,7 @@
 # Contrastive Pretraining with Masked Imputation for Long Clinical Timeseries Data
 
+This is the official code for "An Efficient Contrastive Unimodal Pretraining Method for EHR Time Series Data" at IEEE-EMBS International Conference on Biomedical and Health Informatics (BHI’24). The paper can be found here: https://arxiv.org/abs/2410.09199
+
 ## Model Description
 This model was developed to handle large time series data from Electronic Health Records (EHR) with a combined pretraining objective that includes both sequence-level and token-level tasks. The model was pretrained using data from the MIMIC-III dataset and externally validated on the eICU dataset.
 
