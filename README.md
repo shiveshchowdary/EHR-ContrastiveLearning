@@ -43,6 +43,10 @@ The model showed robustness across different clinics, successfully transferring 
 
 
 ```python
+from models.model import *
+
+bottleneck_model = BottleNeckModel(embed_dim, num_heads, d_ff, num_variables, N).to(DEVICE)
+
 state_dict = torch.load(file_path, map_location="cpu")
 try:
     bottleneck_model.load_state_dict(state_dict)
