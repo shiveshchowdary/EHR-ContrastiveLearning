@@ -39,3 +39,21 @@ The model showed robustness across different clinics, successfully transferring 
 
 `python -m torch.distributed.launch --nproc_per_node=8 main_pretrain.py --data_dir /ssd-shared/MIMIC_EICU_DATA/data/root --pretraining_method MaskedValuePrediction --batch_size 512 --temperature 0.03 --base_lr 1e-3 --weight_decay 0.00001 --gamma 0.1`
 
+## Loading the Model
+
+
+`state_dict = torch.load(file_path, map_location="cpu")
+try:
+    bottleneck_model.load_state_dict(state_dict)
+    return bottleneck_model
+
+except:
+    state_dict = {
+        key: value for key, value in state_dict.items() if "backbone" in key
+    }
+    state_dict = {
+        key.replace("backbone.", ""): value for key, value in state_dict.items()
+    }
+
+    bottleneck_model.load_state_dict(state_dict)
+    return bottleneck_model`
