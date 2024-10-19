@@ -46,7 +46,6 @@ The model showed robustness across different clinics, successfully transferring 
 try:
     bottleneck_model.load_state_dict(state_dict)
     return bottleneck_model
-
 except:
     state_dict = {
         key: value for key, value in state_dict.items() if "backbone" in key
@@ -54,6 +53,5 @@ except:
     state_dict = {
         key.replace("backbone.", ""): value for key, value in state_dict.items()
     }
-
     bottleneck_model.load_state_dict(state_dict)
     return bottleneck_model`
