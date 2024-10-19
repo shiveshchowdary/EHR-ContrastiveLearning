@@ -42,7 +42,8 @@ The model showed robustness across different clinics, successfully transferring 
 ## Loading the Model
 
 
-`state_dict = torch.load(file_path, map_location="cpu")
+```python
+state_dict = torch.load(file_path, map_location="cpu")
 try:
     bottleneck_model.load_state_dict(state_dict)
     return bottleneck_model
@@ -54,4 +55,5 @@ except:
         key.replace("backbone.", ""): value for key, value in state_dict.items()
     }
     bottleneck_model.load_state_dict(state_dict)
-    return bottleneck_model`
+    return bottleneck_model
+```
