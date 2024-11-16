@@ -48,16 +48,13 @@ from models.model import *
 bottleneck_model = BottleNeckModel(embed_dim, num_heads, d_ff, num_variables, N).to(DEVICE)
 
 state_dict = torch.load(file_path, map_location="cpu")
-try:
-    bottleneck_model.load_state_dict(state_dict)
-    return bottleneck_model
-except:
-    state_dict = {
-        key: value for key, value in state_dict.items() if "backbone" in key
-    }
-    state_dict = {
-        key.replace("backbone.", ""): value for key, value in state_dict.items()
-    }
-    bottleneck_model.load_state_dict(state_dict)
-    return bottleneck_model
+
+state_dict = {
+    key: value for key, value in state_dict.items() if "backbone" in key
+}
+state_dict = {
+    key.replace("backbone.", ""): value for key, value in state_dict.items()
+}
+bottleneck_model.load_state_dict(state_dict)
+return bottleneck_model
 ```
